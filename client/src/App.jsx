@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import Login from './pages/Login';
 import Feed from './pages/Feed';
 import { useUser } from '@clerk/clerk-react';
+import Layout from './pages/Layout';
 
 const App = () => {
   const {user} = useUser()
@@ -16,7 +17,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path='/' element={ !user ? <Login/> : <Layout/> }>
+        <Route path='/' element={ !user ? <Login/> : <Layout/>}>
         <Route index element={<Feed/>}/>
         <Route path='messages' element={<Messages/>}/>
         <Route path='messages/:userId' element={<ChatBox/>}/>
