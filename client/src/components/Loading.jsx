@@ -8,4 +8,4 @@ const Loading = ({height = '100vh'}) => {
   )
 }
 
-export default Loading
+export default Loading  
