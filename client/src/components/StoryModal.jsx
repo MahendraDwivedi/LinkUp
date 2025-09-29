@@ -67,8 +67,6 @@ const StoryModal = ({setShowModal,fetchStories}) => {
     formData.append('media_type' , media_type);
     formData.append('media',media);
     formData.append('background_color',background)
-
-    console.log(formData);
     
     const token = await getToken();
     try {

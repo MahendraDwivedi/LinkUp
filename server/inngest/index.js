@@ -6,8 +6,12 @@ import Story from "../models/Story.js";
 import Message from "../models/Message.js";
 
 // Create a client to send and receive events
-export const inngest = new Inngest({ id: "linkup-app" });
-
+export const inngest = new Inngest({
+  id: "linkup-app", 
+  eventKey: process.env.INNGEST_EVENT_KEY,   // for sending events
+  signingKey: process.env.INNGEST_SIGNING_KEY, // for verification
+  baseUrl: "https://inn.gs",  // always use cloud on Vercel
+}); 
 // create a function to sAEV USRE DATA TO A DATABASE
 const syncUserCreation = inngest.createFunction(
   { id: "sync-user-from-clerk" },
